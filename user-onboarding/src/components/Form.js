@@ -16,20 +16,31 @@ const NewUser = ({values, errors, touched, status}) => {
 
     return(
         <div className="newUserForm">
-
+            <h1>This is a form</h1>
             <Form>
+                <div className="nameBox">
                 <Field type="text" name="name" placeholder="Name" />
                 {touched.name && errors.name && (<p className="error">{errors.name}</p>)}
+                </div>
 
+                <div className="emailBox">
                 <Field type="email" name="email" placeholder="Email" />
                 {touched.email && errors.email && (<p className="error">{errors.email}</p>)}
+                </div>
 
+                <div className="passwordBox">
                 <Field type="password" name="password" placeholder="Enter your password" />
                 {touched.password && errors.password && (<p className="error">{errors.password}</p>)}
+                </div>
 
+                <div className="tos">
                 <label>Agree to Terms of Services: <Field type="checkbox" name="terms" checked={values.terms} /></label>
                 {touched.terms && errors.terms && (<p className="error">{errors.terms}</p>)}
+                </div>
+
+                <div className="submitButton">
                 <button>Submit</button>  
+                </div>
             </Form>
             
             {user.map(person => (
