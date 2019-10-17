@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
 code {
@@ -12,11 +13,16 @@ code {
     monospace;
 }
 
+.newUserForm .headerText {
+  color: skyblue;
+  margin: auto;
+ 
+}
 .newUserForm {
-  padding: 3%;
+  padding: 7%;
   margin: auto;
   background-color: gray;
-  box-shadow: 5px 5px darkslategray;
+  box-shadow: 5px 5px darkslategray;  
 }
 
 .newUserForm .nameBox {

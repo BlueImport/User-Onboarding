@@ -16,7 +16,10 @@ const NewUser = ({values, errors, touched, status, handleBlur, handleChange}) =>
 
     return(
         <div className="newUserForm">
+            <div className="headerText">
             <h1>Let's Learn About You</h1>
+            </div>
+            
             <Form>
                 <div className="nameBox">
                 <Field type="text" name="name" placeholder="Your Name" />
@@ -33,25 +36,28 @@ const NewUser = ({values, errors, touched, status, handleBlur, handleChange}) =>
                 {touched.password && errors.password && (<p className="error">{errors.password}</p>)}
                 </div>
 
-                <select
-                    name="color"
-                    value={values.color}
+                <div className="dropDown">
+                <h3>Select A Book You Would Read</h3>
+                <select className="select-css"
+                    name="books"
+                    value={values.books}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     style={{ display: 'block' }}
             >
-                    <option value="" label="Select A Book You Would Read" />
+                    <option value="" label="Choose Wisely" />
                     <option value="dAdams" label="Hitchhikers Guide To The Galaxy" />
                     <option value="dSuess" label="Oh The Places You Will Go" />
                     <option value="SSmith" label="Pride And Prejudice and Zombies" />
                     <option value="audioBook" label="I Like It When Somebody Reads To Me" />
                     <option value="no" label="I Don't Read (An Autobiography)" />
                 </select>
+                </div>
 
-                {errors.color &&
-                    touched.color &&
+                {errors.books &&
+                    touched.books &&
                     <div className="input-feedback">
-                    {errors.color}
+                    {errors.books}
                     </div>}
 
                 <div className="tos">
