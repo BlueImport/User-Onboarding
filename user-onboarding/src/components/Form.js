@@ -16,15 +16,15 @@ const NewUser = ({values, errors, touched, status}) => {
 
     return(
         <div className="newUserForm">
-            <h1>This is a form</h1>
+            <h1>Let's Learn About You</h1>
             <Form>
                 <div className="nameBox">
-                <Field type="text" name="name" placeholder="Name" />
+                <Field type="text" name="name" placeholder="Your Name" />
                 {touched.name && errors.name && (<p className="error">{errors.name}</p>)}
                 </div>
 
                 <div className="emailBox">
-                <Field type="email" name="email" placeholder="Email" />
+                <Field type="email" name="email" placeholder="Your Email" />
                 {touched.email && errors.email && (<p className="error">{errors.email}</p>)}
                 </div>
 

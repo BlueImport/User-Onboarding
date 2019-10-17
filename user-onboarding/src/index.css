@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.newUserForm {
+  padding: 3%;
+  margin: auto;
+  background-color: gray;
+  box-shadow: 5px 5px darkslategray;
+}
+
+.newUserForm .nameBox {
+  color: blue;
+}
+
+.newUserForm .emailBox {
+  color: blue;
+}
+
+.newUserForm .passwordBox {
+  color: blue;
+}
+
+.newUserForm .tos {
+  color: blue;
+}
