@@ -4,7 +4,7 @@ import axios from "axios";
 import * as Yup from "yup";
 
 
-const NewUser = ({values, errors, touched, status}) => {
+const NewUser = ({values, errors, touched, status, handleBlur, handleChange}) => {
 
     const [user, setUser] = useState([]);
 
@@ -32,6 +32,27 @@ const NewUser = ({values, errors, touched, status}) => {
                 <Field type="password" name="password" placeholder="Enter your password" />
                 {touched.password && errors.password && (<p className="error">{errors.password}</p>)}
                 </div>
+
+                <select
+                    name="color"
+                    value={values.color}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    style={{ display: 'block' }}
+            >
+                    <option value="" label="Select A Book You Would Read" />
+                    <option value="dAdams" label="Hitchhikers Guide To The Galaxy" />
+                    <option value="dSuess" label="Oh The Places You Will Go" />
+                    <option value="SSmith" label="Pride And Prejudice and Zombies" />
+                    <option value="audioBook" label="I Like It When Somebody Reads To Me" />
+                    <option value="no" label="I Don't Read (An Autobiography)" />
+                </select>
+
+                {errors.color &&
+                    touched.color &&
+                    <div className="input-feedback">
+                    {errors.color}
+                    </div>}
 
                 <div className="tos">
                 <label>Agree to Terms of Services: <Field type="checkbox" name="terms" checked={values.terms} /></label>
