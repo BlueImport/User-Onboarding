@@ -24,7 +24,7 @@ const NewUser = ({values, errors, touched, status}) => {
                 <Field type="email" name="email" placeholder="Email" />
                 {touched.email && errors.email && (<p className="error">{errors.email}</p>)}
 
-                <Field type="password" name="password" placeholder="●●●●●●●●" />
+                <Field type="password" name="password" placeholder="Enter your password" />
                 {touched.password && errors.password && (<p className="error">{errors.password}</p>)}
 
                 <label>Agree to Terms of Services: <Field type="checkbox" name="terms" checked={values.terms} /></label>
@@ -52,9 +52,9 @@ const FormikNewUser = withFormik({
         };
     },
     validationSchema: Yup.object().shape({
-        name: Yup.string().min(2, "Name must have more than one character.").required("Required field."),
+        name: Yup.string().min(2, "Your name is longer than 1 character.").required("Required field."),
         email: Yup.string().email("Email not valid.").required("Required field."),
-        password: Yup.string().min(8, "Password must have at least 8 characters.").required("Required field."),
+        password: Yup.string().min(8, "Password is too short. Add some characters.").required("Required field."),
         terms: Yup.boolean().oneOf([true], "Must accept Terms of Service.").required()
     }),
 
